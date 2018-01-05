@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name="order_detail")
 public class OrderDetail implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
