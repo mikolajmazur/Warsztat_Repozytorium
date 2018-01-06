@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public class Product extends Auditable implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String name;
     private Double price;

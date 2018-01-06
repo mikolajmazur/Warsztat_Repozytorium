@@ -2,12 +2,12 @@ insert into client(id, first_name, last_name) VALUES (1, 'Józef', 'Abacki');
 insert into client(id, first_name, last_name) VALUES (2, 'Adrian', 'Duda');
 insert into client(id, first_name, last_name) VALUES (3, 'Beata', 'Szydło');
 
-insert into product(id, name, price) VALUES (1, 'stól', 300);
-insert into product(id, name, price) VALUES (2, 'krzesło', 30);
-insert into product(id, name, price) VALUES (3, 'granat', 100);
-insert into product(id, name, price) VALUES (4, 'mina przeciwpiechotna', 500);
-insert into product(id, name, price) VALUES (5, 'kremówka', 21.37);
-insert into product(id, name, price) VALUES (6, 'zebra', 2000);
+insert into product(id, name, price, DTYPE, MATERIAL) VALUES (1, 'stól', 300, 'FurnitureProduct', 'drewno');
+insert into product(id, name, price, DTYPE, MATERIAL) VALUES (2, 'krzesło', 30, 'FurnitureProduct', 'drewno');
+insert into product(id, name, price, DTYPE, EXPLOSION_RANGE) VALUES (3, 'granat', 100, 'MilitaryExplosiveProduct', 5);
+insert into product(id, name, price, DTYPE, EXPLOSION_RANGE) VALUES (4, 'mina przeciwpiechotna', 500, 'MilitaryExplosiveProduct', 3.5);
+insert into product(id, name, price, DTYPE, CALORIES) VALUES (5, 'kremówka', 21.37, 'FoodProduct', 312);
+insert into product(id, name, price, DTYPE, CALORIES) VALUES (6, 'tort', 20, 'FoodProduct', 1337);
 
 insert into app_order(id, date, client_id) values (1, '13.10.2017', 3);
 insert into app_order(id, date, client_id) values (2, '3.1.2017', 2);

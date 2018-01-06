@@ -6,6 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import pl.edu.wat.wcy.isi.ai.i4e1s1.entity.FoodProduct;
+import pl.edu.wat.wcy.isi.ai.i4e1s1.entity.FurnitureProduct;
+import pl.edu.wat.wcy.isi.ai.i4e1s1.entity.MilitaryExplosiveProduct;
 import pl.edu.wat.wcy.isi.ai.i4e1s1.entity.Product;
 import pl.edu.wat.wcy.isi.ai.i4e1s1.examples.CriteriaQueries;
 import pl.edu.wat.wcy.isi.ai.i4e1s1.examples.MetamodelQueries;
@@ -35,7 +38,8 @@ public class ApplicationSpringBoot implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        showAuditableExample();
+        //showQueryExamples();
+        //showAuditableExample();
     }
 
     private void showAuditableExample(){
