@@ -1,6 +1,6 @@
 package pl.edu.wat.wcy.isi.ai.i4e1s1.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,10 +12,11 @@ public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
     @OneToMany(mappedBy = "client")
-    @JsonIgnore
     private List<Order> orders = new ArrayList<>();
 
     public String getFirstName() {

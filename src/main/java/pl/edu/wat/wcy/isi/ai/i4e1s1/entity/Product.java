@@ -1,7 +1,5 @@
 package pl.edu.wat.wcy.isi.ai.i4e1s1.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,7 +14,6 @@ public class Product implements Serializable {
     private Double price;
     @OneToMany(mappedBy = "product",
             fetch = FetchType.LAZY)
-    @JsonIgnore
     List<OrderDetail> orderDetails = new ArrayList<>();
 
     public Product(String name, Double price) {

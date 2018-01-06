@@ -14,7 +14,5 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-        Product product = new Product("Stół", 100.20);
-
     }
 }

@@ -27,19 +27,18 @@ public class GenericRepositoryImpl<E extends Serializable> implements GenericRep
     @Override
     @SuppressWarnings("unchecked")
     public E getByPrimaryKey(Object primaryKey) {
-        E result;
-        createManagerAndBeginTransaction();
-        result = entityManager.find(clazz, primaryKey);
-        commitTransactionAndCloseManager();
+        entityManager = factory.createEntityManager();
+        E result = entityManager.find(clazz, primaryKey);
+        entityManager.close();
         return result;
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public List<E> getAll() {
-        List<E> result;
-        createManagerAndBeginTransaction();
-        result = entityManager.createQuery("from " + clazz.getName()).getResultList();
+        entityManager = factory.createEntityManager();
+        List<E> result = entityManager.createQuery("from " + clazz.getName()).getResultList();
+        entityManager.close();
         return result;
     }
 
