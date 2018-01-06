@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "app_order")
-public class Order implements Serializable {
+public class Order extends Auditable implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

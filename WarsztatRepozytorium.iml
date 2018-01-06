@@ -80,5 +80,6 @@
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:4.3.13.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-jpamodelgen:5.0.12.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-java8:5.1.0.Final" level="project" />
   </component>
 </module>

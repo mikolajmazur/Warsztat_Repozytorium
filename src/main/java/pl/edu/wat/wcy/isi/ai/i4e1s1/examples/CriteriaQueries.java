@@ -1,4 +1,4 @@
-package pl.edu.wat.wcy.isi.ai.i4e1s1;
+package pl.edu.wat.wcy.isi.ai.i4e1s1.examples;
 
 import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;

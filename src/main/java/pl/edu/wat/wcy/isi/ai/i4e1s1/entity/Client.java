@@ -1,5 +1,8 @@
 package pl.edu.wat.wcy.isi.ai.i4e1s1.entity;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -8,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Client implements Serializable {
+@EntityListeners(AuditingEntityListener.class)
+public class Client extends Auditable implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

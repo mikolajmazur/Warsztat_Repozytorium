@@ -5,11 +5,16 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import pl.edu.wat.wcy.isi.ai.i4e1s1.entity.Product;
+import pl.edu.wat.wcy.isi.ai.i4e1s1.examples.CriteriaQueries;
+import pl.edu.wat.wcy.isi.ai.i4e1s1.examples.MetamodelQueries;
 import pl.edu.wat.wcy.isi.ai.i4e1s1.repository.ClientRepository;
 import pl.edu.wat.wcy.isi.ai.i4e1s1.repository.OrderRepository;
 import pl.edu.wat.wcy.isi.ai.i4e1s1.repository.ProductRepository;
 
 @SpringBootApplication
+@EnableJpaAuditing
 public class ApplicationSpringBoot implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(ApplicationSpringBoot.class);
@@ -30,6 +35,19 @@ public class ApplicationSpringBoot implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
+        showAuditableExample();
+    }
+
+    private void showAuditableExample(){
+        Product product = new Product("stól", 500.0);
+        productRepository.save(product);
+        System.out.println("-------------------------------");
+        System.out.println("Audytowanie");
+        System.out.println("-------------------------------");
+        System.out.println("Data utworzenia produktu " + product.getCreatedDate());
+    }
+
+    private void showQueryExamples(){
         System.out.println("-------------------------------");
         System.out.println("Zapytania z użyciem criteria builder");
         System.out.println("-------------------------------");
